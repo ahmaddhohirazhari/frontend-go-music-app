@@ -1,23 +1,29 @@
 import React from "react";
 import "./index.css";
 
-interface DataItem {
-  id: number;
+interface Music {
+  Music_id: number;
   name: string;
+  album: string;
+  album_art: string;
+  singer: string;
+  publish_date: string;
+  created_at: string;
+  updated_at: string;
 }
-
+// const [musicData, setMusicData] = useState<Music[]>([]);
 interface Props {
-  data: DataItem;
-  setData: React.Dispatch<React.SetStateAction<DataItem[]>>;
+  musicData: Music;
+  setMusicData: React.Dispatch<React.SetStateAction<Music[]>>;
 }
 
-const Card: React.FC<Props> = ({ data, setData }) => {
+const Card: React.FC<Props> = ({ musicData, setMusicData }) => {
   // component implementation here
 
   return (
     <div className="">
       <div className="card d-flex">
-        <img src={data.name} alt="" className="card_image" />
+        <img src={musicData.album_art} alt="" className="card_image" />
       </div>
     </div>
   );
